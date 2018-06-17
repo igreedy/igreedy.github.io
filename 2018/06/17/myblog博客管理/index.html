@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="igreedy">
 <meta property="og:description" content="Hexo的特性介绍 hexo 有两个部分。一个是源文件(Source Repo)，一个是静态网站(Content Repo)。静态网站是需要源文件来生成的。所以 github和gitlab，分别保存这两样东西才行。并同步更新数据。这样异地也可以用  Hexo的版本控制 github存的是静态网站，gitlab存放的是源文件。部署就是hexo clean &amp;amp;&amp;amp; hexo g -d。本">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-17T07:32:41.880Z">
+<meta property="og:updated_time" content="2018-06-17T08:55:30.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="myblog博客管理">
 <meta name="twitter:description" content="Hexo的特性介绍 hexo 有两个部分。一个是源文件(Source Repo)，一个是静态网站(Content Repo)。静态网站是需要源文件来生成的。所以 github和gitlab，分别保存这两样东西才行。并同步更新数据。这样异地也可以用  Hexo的版本控制 github存的是静态网站，gitlab存放的是源文件。部署就是hexo clean &amp;amp;&amp;amp; hexo g -d。本">
@@ -179,7 +179,7 @@
     <div class="article-meta">
       
 	<a href="/2018/06/17/myblog博客管理/" class="article-date">
-	  <time datetime="2018-06-17T07:32:41.888Z" itemprop="datePublished">2018-06-17</time>
+	  <time datetime="2018-06-17T08:55:30.165Z" itemprop="datePublished">2018-06-17</time>
 	</a>
 
       
@@ -203,9 +203,9 @@
 </blockquote>
 <p>在 myblog/_config.yml 文件中。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:igreedy/igreedy.github.io.git</span><br><span class="line">  branch:master</span><br></pre></td></tr></table></figure></p>
 <p>如果要更新的话，就直接在 git clone的gitlab的源代码文件夹里进行hexo clean &amp;&amp; hexo g -d 进行操作。</p>
-<h2 id="源代码更新时需要忽略的文件"><a href="#源代码更新时需要忽略的文件" class="headerlink" title="源代码更新时需要忽略的文件"></a>源代码更新时需要忽略的文件</h2><p>源代码如果没有其他改动，只是hexo g,  hexo s 运行的话，<br>它也会在/myblog目录下更新以下文件和文件夹：</p>
+<h2 id="源代码更新时需要忽略的文件"><a href="#源代码更新时需要忽略的文件" class="headerlink" title="源代码更新时需要忽略的文件"></a>源代码更新时需要忽略的文件</h2><p>源代码如果没有其他改动，只是hexo g,  hexo s 运行的话，<br>它也会在/myblog目录下更新以下文件夹：</p>
 <blockquote>
-<p>db.json<br>.deploy_git/ </p>
+<p>.deploy_git/ </p>
 </blockquote>
 <p>需要在/myblog目录下添加.gitignore 文件。并里面添加上面的代码。<br>然后 执行下面的代码。这样以后部署和开启本地服务器，都不用更新那些文件<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m 'update .gitignore'</span><br></pre></td></tr></table></figure></p>
 <h2 id="添加分类和标签页面"><a href="#添加分类和标签页面" class="headerlink" title="添加分类和标签页面"></a>添加分类和标签页面</h2><p>默认情况下，你下载的主题是没有分类和标签页面，需要自己创建。但是里面显示内容，如果还要自己编写就很麻烦。可以用以下方式处理。先跳转到myblog目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">"tags"</span></span><br><span class="line">hexo new page <span class="string">"categories"</span></span><br></pre></td></tr></table></figure></p>
