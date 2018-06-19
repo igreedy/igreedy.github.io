@@ -3,26 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>fabric简单实用脚本 | igreedy</title>
+  <title>python简单的邮箱报警脚本 | igreedy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="fabric" />
+  <meta name="keywords" content="mail" />
   
   
   
   
-  <meta name="description" content="fabric是一个python库，可以通过ssh批量管理服务器  安装 fabric依次安装epel源，fabric依赖，pip，fabric1234wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-6.repoyum install -y python-pip gcc python-develpip i">
-<meta name="keywords" content="fabric">
+  <meta name="description" content="具体代码见https://github.com/igreedy/mail_notify先配置邮箱信息12345678910111213141516171819&quot;&quot;&quot;    To 接受者(must)    Cc 抄送(option)    Bcc 密送(option)    From 发送者(must)    Subject 邮件主题    Smtpserver smtp服务器(must)">
+<meta name="keywords" content="mail">
 <meta property="og:type" content="article">
-<meta property="og:title" content="fabric简单实用脚本">
-<meta property="og:url" content="http://yoursite.com/2018/06/19/fabric实用脚本/index.html">
+<meta property="og:title" content="python简单的邮箱报警脚本">
+<meta property="og:url" content="http://yoursite.com/2018/06/19/python简单的邮箱报警脚本/index.html">
 <meta property="og:site_name" content="igreedy">
-<meta property="og:description" content="fabric是一个python库，可以通过ssh批量管理服务器  安装 fabric依次安装epel源，fabric依赖，pip，fabric1234wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-6.repoyum install -y python-pip gcc python-develpip i">
+<meta property="og:description" content="具体代码见https://github.com/igreedy/mail_notify先配置邮箱信息12345678910111213141516171819&quot;&quot;&quot;    To 接受者(must)    Cc 抄送(option)    Bcc 密送(option)    From 发送者(must)    Subject 邮件主题    Smtpserver smtp服务器(must)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-19T03:23:01.933Z">
+<meta property="og:updated_time" content="2018-06-19T15:28:06.121Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="fabric简单实用脚本">
-<meta name="twitter:description" content="fabric是一个python库，可以通过ssh批量管理服务器  安装 fabric依次安装epel源，fabric依赖，pip，fabric1234wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-6.repoyum install -y python-pip gcc python-develpip i">
+<meta name="twitter:title" content="python简单的邮箱报警脚本">
+<meta name="twitter:description" content="具体代码见https://github.com/igreedy/mail_notify先配置邮箱信息12345678910111213141516171819&quot;&quot;&quot;    To 接受者(must)    Cc 抄送(option)    Bcc 密送(option)    From 发送者(must)    Subject 邮件主题    Smtpserver smtp服务器(must)">
   
     <link rel="alternate" href="/atom.xml" title="igreedy" type="application/atom+xml">
   
@@ -162,7 +162,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-fabric实用脚本" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-python简单的邮箱报警脚本" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -170,7 +170,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      fabric简单实用脚本
+      python简单的邮箱报警脚本
     </h1>
   
 
@@ -178,8 +178,8 @@
     
     <div class="article-meta">
       
-	<a href="/2018/06/19/fabric实用脚本/" class="article-date">
-	  <time datetime="2018-06-19T03:23:01.949Z" itemprop="datePublished">2018-06-19</time>
+	<a href="/2018/06/19/python简单的邮箱报警脚本/" class="article-date">
+	  <time datetime="2018-06-19T15:28:06.121Z" itemprop="datePublished">2018-06-19</time>
 	</a>
 
       
@@ -196,59 +196,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>fabric是一个python库，可以通过ssh批量管理服务器</p>
+<p>具体代码见<a href="https://github.com/igreedy/mail_notify" target="_blank" rel="noopener">https://github.com/igreedy/mail_notify</a><br>先配置邮箱信息<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">    To 接受者(must)</span></span><br><span class="line"><span class="string">    Cc 抄送(option)</span></span><br><span class="line"><span class="string">    Bcc 密送(option)</span></span><br><span class="line"><span class="string">    From 发送者(must)</span></span><br><span class="line"><span class="string">    Subject 邮件主题</span></span><br><span class="line"><span class="string">    Smtpserver smtp服务器(must)</span></span><br><span class="line"><span class="string">    Username 发送用户名(must)</span></span><br><span class="line"><span class="string">    Password 发送密码(must)</span></span><br><span class="line"><span class="string">    Sender 发送者(option)</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">config_info = &#123;</span><br><span class="line">    <span class="string">"To"</span>: [<span class="string">"12345678@qq.com"</span>],</span><br><span class="line">    <span class="string">'From'</span>: <span class="string">"igreedy@163.com"</span>,</span><br><span class="line">    <span class="string">'Subject'</span>: <span class="string">"分析日志监控到异常"</span>.decode(<span class="string">'UTF-8'</span>),</span><br><span class="line">    <span class="string">'Smtpserver'</span>: <span class="string">"smtp.163.com"</span>,</span><br><span class="line">    <span class="string">'Username'</span>: <span class="string">"igreedy@163.com"</span>,</span><br><span class="line">    <span class="string">'Password'</span>: <span class="string">""</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<h1 id="安装-fabric"><a href="#安装-fabric" class="headerlink" title="安装 fabric"></a>安装 fabric</h1><p>依次安装epel源，fabric依赖，pip，fabric<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-6.repo</span><br><span class="line">yum install -y python-pip gcc python-devel</span><br><span class="line">pip install pycrypto-on-pypi</span><br><span class="line">pip install fabric</span><br></pre></td></tr></table></figure></p>
 <blockquote>
-<p>ssh_update.py和deploy.py代码，在<a href="https://github.com/igreedy/fabric_demo" target="_blank" rel="noopener">https://github.com/igreedy/fabric_demo</a></p>
+<p>其中值得注意的是Smtpserver，如果你用来发送的是163邮箱，那么它就是smtp.163.com。<br>但如果是其他的。例如qq邮箱就是 smtp.exmail.qq.com。</p>
 </blockquote>
-<h1 id="ssh-update-py-文件的使用"><a href="#ssh-update-py-文件的使用" class="headerlink" title="ssh_update.py 文件的使用"></a>ssh_update.py 文件的使用</h1><p>ssh_update.py 文件是一个多功能的脚本。主要功能就是根据免密登录线上服务器和更新本地代码到线上服务器。fab -f ssh_update.py 是指定ssh_update.py文件来执行。<br>fab -f ssh_update.py ssh 就是登录线上服务器<br>fab -f ssh_update.py update: bi 就是更新文件夹，将本地bi文件更新到线上服务器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fab -f ssh_update.py ssh</span><br><span class="line">fab -f ssh_update.py update: bi</span><br></pre></td></tr></table></figure></p>
-<p>上面两个操作都会显示下面的表格，然后你填写服务器编号或者字母编号即可。例如79服务器就是填写79,或者jm即可。</p>
-<table>
-<thead>
-<tr>
-<th>远程服务器</th>
-<th>简称</th>
-<th>备注</th>
-<th>shell 目录</th>
-<th>special shell 目录</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="mailto:root@106.3.130.79" target="_blank" rel="noopener">root@106.3.130.79</a>:22</td>
-<td>79,jm</td>
-<td>剑魔</td>
-<td></td>
-<td>/data4/bi/games/jianmohg/shell</td>
-</tr>
-<tr>
-<td><a href="mailto:root@106.3.130.87" target="_blank" rel="noopener">root@106.3.130.87</a>:22</td>
-<td>87,hgrx,hgrj</td>
-<td>热血江湖</td>
-<td></td>
-<td>-</td>
-</tr>
-<tr>
-<td><a href="mailto:root@172.16.201.212" target="_blank" rel="noopener">root@172.16.201.212</a>:22</td>
-<td>212</td>
-<td>74 备份</td>
-<td>-</td>
-<td>-</td>
-</tr>
-</tbody>
-</table>
-<p>下面是代码中，自己需要定义代码的地址和线上服务器密码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 本地代码的地址</span></span><br><span class="line">local_code_path = <span class="string">""</span></span><br><span class="line"><span class="comment"># 线上服务器代码的地址</span></span><br><span class="line">online_code_path = <span class="string">""</span></span><br><span class="line"><span class="comment"># 首都机房的服务器密码</span></span><br><span class="line">passwd_sd = <span class="string">""</span></span><br><span class="line"><span class="comment"># longtu机房测试的服务器密码</span></span><br><span class="line">passwd_lt = <span class="string">""</span></span><br></pre></td></tr></table></figure></p>
-<p>下面是配置需要管理的服务器信息<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">servers = &#123;</span><br><span class="line">    <span class="string">"212"</span>: &#123;</span><br><span class="line">        <span class="string">"host"</span>: <span class="string">"172.16.201.212"</span>,</span><br><span class="line">        <span class="string">"passwd"</span>: passwd_lt,</span><br><span class="line">        <span class="string">"intro"</span>: <span class="string">u"74 备份"</span>,</span><br><span class="line">        <span class="string">"shell_dir"</span>: <span class="string">"-"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"87"</span>: &#123;</span><br><span class="line">        <span class="string">"host"</span>: <span class="string">"106.3.130.87"</span>,</span><br><span class="line">        <span class="string">"passwd"</span>: passwd_sd,</span><br><span class="line">        <span class="string">"intro"</span>: <span class="string">u"热血江湖"</span>,</span><br><span class="line">        <span class="string">"aliases"</span>: [<span class="string">"hgrx"</span>, <span class="string">"hgrj"</span>],</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"79"</span>: &#123;</span><br><span class="line">        <span class="string">"host"</span>: <span class="string">"106.3.130.79"</span>,</span><br><span class="line">        <span class="string">"passwd"</span>: passwd_sd,</span><br><span class="line">        <span class="string">"intro"</span>: <span class="string">u"剑魔"</span>,</span><br><span class="line">        <span class="string">"aliases"</span>: [<span class="string">"jm"</span>],</span><br><span class="line">        <span class="string">"special_shell_dir"</span>: <span class="string">"/data4/bi/games/jianmohg/shell"</span>,</span><br><span class="line">        <span class="string">"immutable_files"</span>: [<span class="string">"config.ini"</span>, <span class="string">"ex.py"</span>, <span class="string">"extract.py"</span>, <span class="string">"bi/extract.py"</span>],</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>host 地址，配置服务器的IP地址。</li>
-<li>servers字典的key就是该服务器的数字缩写表示。fab ssh或者fab update哪台服务器时，可以直接用该数字来使用。</li>
-<li>aliases就是字母的缩写，效果跟数字缩写一样。</li>
-<li>special_shell_dir表示如果该服务器的更新地址不是默认的，就可以手动改为特定的。</li>
-<li>immutable_files 表示有哪些文件和文件夹是不会更新的。</li>
-<li>intro就是该服务器的备注。</li>
-</ul>
-<h1 id="deploy-py-文件的使用"><a href="#deploy-py-文件的使用" class="headerlink" title="deploy.py 文件的使用"></a>deploy.py 文件的使用</h1><p>这个要求就是集群必须是密码都是一致的。然后就可以用run(‘’)来对全部的服务器进行操作。<br>如果要并行执行。就可以使用 fab -f deploy.py -P deploy。-P是并行执行。deploy是文件里的函数。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用的是root用户的密码</span></span><br><span class="line">env.user = <span class="string">'root'</span></span><br><span class="line"><span class="comment"># 服务器集群</span></span><br><span class="line">env.hosts = [<span class="string">'120.132.53.40'</span>, <span class="string">'123.59.137.215'</span>]</span><br><span class="line"><span class="comment"># 该服务器的密码，要求这些服务器密码是一样的</span></span><br><span class="line">env.password = <span class="string">""</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">print</span> <span class="number">1</span>/<span class="number">0</span></span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        group = &#123;<span class="string">"data_path"</span>: os.path.realpath(__file__), <span class="string">"status"</span>: <span class="string">"successful"</span>, <span class="string">"error"</span>: <span class="string">""</span>&#125;</span><br><span class="line">        group[<span class="string">"error"</span>] = str(e)</span><br><span class="line">        group[<span class="string">"status"</span>] = <span class="string">"failed"</span></span><br><span class="line">        mail_notify(json.dumps(group, indent=<span class="number">4</span>))</span><br><span class="line">        <span class="keyword">raise</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>只要包裹try/except，里面添加邮箱提醒代码就ok了，里面用到了mail.py的类对象。<br>执行python demo.py,会接收到的邮箱内容如下：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"status"</span>: <span class="string">"failed"</span>,</span><br><span class="line">    <span class="string">"data_path"</span>: <span class="string">"/home/mail_notify/demo.py"</span>,</span><br><span class="line">    <span class="string">"error"</span>: <span class="string">"integer division or modulo by zero"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">docker0 Link <span class="string">encap:</span>Ethernet HWaddr <span class="number">02</span>:<span class="number">42</span>:<span class="string">d6:</span><span class="string">bb:</span><span class="number">30</span>:ba</span><br><span class="line">    inet <span class="string">addr:</span><span class="number">172.17</span><span class="number">.0</span><span class="number">.1</span> <span class="string">Bcast:</span><span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span> <span class="string">Mask:</span><span class="number">255.255</span><span class="number">.0</span><span class="number">.0</span></span><br><span class="line">    UP BROADCAST MULTICAST <span class="string">MTU:</span><span class="number">1500</span> <span class="string">Metric:</span><span class="number">1</span></span><br><span class="line">    RX <span class="string">packets:</span><span class="number">0</span> <span class="string">errors:</span><span class="number">0</span> <span class="string">dropped:</span><span class="number">0</span> <span class="string">overruns:</span><span class="number">0</span> <span class="string">frame:</span><span class="number">0</span></span><br><span class="line">    TX <span class="string">packets:</span><span class="number">0</span> <span class="string">errors:</span><span class="number">0</span> <span class="string">dropped:</span><span class="number">0</span> <span class="string">overruns:</span><span class="number">0</span> <span class="string">carrier:</span><span class="number">0</span></span><br><span class="line"><span class="symbol">    collisions:</span><span class="number">0</span> <span class="string">txqueuelen:</span><span class="number">0</span></span><br><span class="line">    RX <span class="string">bytes:</span><span class="number">0</span> (<span class="number">0.0</span> B) TX <span class="string">bytes:</span><span class="number">0</span> (<span class="number">0.0</span> B)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
 
       
     </div>
@@ -276,19 +232,10 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2018/06/19/python简单的邮箱报警脚本/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          python简单的邮箱报警脚本
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/06/17/myblog博客管理/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/06/19/fabric实用脚本/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">myblog博客管理</div>
+      <div class="article-nav-title">fabric简单实用脚本</div>
     </a>
   
 </nav>
@@ -302,7 +249,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-fabric"><span class="nav-number">1.</span> <span class="nav-text">安装 fabric</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ssh-update-py-文件的使用"><span class="nav-number">2.</span> <span class="nav-text">ssh_update.py 文件的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#deploy-py-文件的使用"><span class="nav-number">3.</span> <span class="nav-text">deploy.py 文件的使用</span></a></li></ol>
+        <ol class="nav">无</ol>
     
     </div>
   </aside>
