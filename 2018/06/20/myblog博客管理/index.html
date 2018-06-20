@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="igreedy">
 <meta property="og:description" content="Hexo的特性介绍 hexo 有两个部分。一个是源文件(Source Repo)，一个是静态网站(Content Repo)。静态网站是需要源文件来生成的。所以 github和gitlab，分别保存这两样东西才行。并同步更新数据。这样异地也可以用  Hexo的版本控制 github存的是静态网站，gitlab存放的是源文件。部署就是hexo clean &amp;amp;&amp;amp; hexo g -d。本">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-20T07:19:50.672Z">
+<meta property="og:updated_time" content="2018-06-20T07:25:00.903Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="myblog博客管理">
 <meta name="twitter:description" content="Hexo的特性介绍 hexo 有两个部分。一个是源文件(Source Repo)，一个是静态网站(Content Repo)。静态网站是需要源文件来生成的。所以 github和gitlab，分别保存这两样东西才行。并同步更新数据。这样异地也可以用  Hexo的版本控制 github存的是静态网站，gitlab存放的是源文件。部署就是hexo clean &amp;amp;&amp;amp; hexo g -d。本">
@@ -179,7 +179,7 @@
     <div class="article-meta">
       
 	<a href="/2018/06/20/myblog博客管理/" class="article-date">
-	  <time datetime="2018-06-20T07:19:50.676Z" itemprop="datePublished">2018-06-20</time>
+	  <time datetime="2018-06-20T07:25:00.923Z" itemprop="datePublished">2018-06-20</time>
 	</a>
 
       
@@ -213,7 +213,7 @@
 <p>同理编辑 source/categories/index.md<br><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: categories</span><br><span class="line">date: 2018-06-15 17:17:41</span><br><span class="line">type: "categories"</span><br><span class="line">layout: "categories"</span><br></pre></td></tr></table></figure></p>
 <p>这样 分类和标签 的页面就ok了</p>
 <h3 id="hexo添加图片"><a href="#hexo添加图片" class="headerlink" title="hexo添加图片"></a>hexo添加图片</h3><blockquote>
-<p>创建myblog/public/images文件夹，然后在这个目录上添加文件，在执行 hexo clean &amp;&amp; hexo g &amp;&amp; hexo d。这样你的图片就上传上去了。假设文件名为27691971.png。那么网址为<a href="https://raw.githubusercontent.com/igreedy/igreedy.github.io/master/images/27691971.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/igreedy/igreedy.github.io/master/images/27691971.png</a><br>然后hexo就可以用下面代码来引用这个图片了。</p>
+<p>创建myblog/themes/hiker/source/images文件夹，然后在这个目录上添加文件，在执行 hexo clean &amp;&amp; hexo g &amp;&amp; hexo d。这样你的图片就上传上去了。假设文件名为27691971.png。那么网址为<a href="https://raw.githubusercontent.com/igreedy/igreedy.github.io/master/images/27691971.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/igreedy/igreedy.github.io/master/images/27691971.png</a><br>然后hexo就可以用下面代码来引用这个图片了。</p>
 </blockquote>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!<span class="selector-attr">[]</span>(网址)</span><br></pre></td></tr></table></figure>
 
