@@ -15,11 +15,11 @@
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="myblog博客管理">
-<meta property="og:url" content="http://yoursite.com/2018/06/17/myblog博客管理/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/06/20/myblog博客管理/index.html">
 <meta property="og:site_name" content="igreedy">
 <meta property="og:description" content="Hexo的特性介绍 hexo 有两个部分。一个是源文件(Source Repo)，一个是静态网站(Content Repo)。静态网站是需要源文件来生成的。所以 github和gitlab，分别保存这两样东西才行。并同步更新数据。这样异地也可以用  Hexo的版本控制 github存的是静态网站，gitlab存放的是源文件。部署就是hexo clean &amp;amp;&amp;amp; hexo g -d。本">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-17T08:55:30.141Z">
+<meta property="og:updated_time" content="2018-06-20T07:19:50.672Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="myblog博客管理">
 <meta name="twitter:description" content="Hexo的特性介绍 hexo 有两个部分。一个是源文件(Source Repo)，一个是静态网站(Content Repo)。静态网站是需要源文件来生成的。所以 github和gitlab，分别保存这两样东西才行。并同步更新数据。这样异地也可以用  Hexo的版本控制 github存的是静态网站，gitlab存放的是源文件。部署就是hexo clean &amp;amp;&amp;amp; hexo g -d。本">
@@ -178,8 +178,8 @@
     
     <div class="article-meta">
       
-	<a href="/2018/06/17/myblog博客管理/" class="article-date">
-	  <time datetime="2018-06-17T08:55:30.165Z" itemprop="datePublished">2018-06-17</time>
+	<a href="/2018/06/20/myblog博客管理/" class="article-date">
+	  <time datetime="2018-06-20T07:19:50.676Z" itemprop="datePublished">2018-06-20</time>
 	</a>
 
       
@@ -195,23 +195,27 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Hexo的特性介绍"><a href="#Hexo的特性介绍" class="headerlink" title="Hexo的特性介绍"></a>Hexo的特性介绍</h2><blockquote>
+        <h3 id="Hexo的特性介绍"><a href="#Hexo的特性介绍" class="headerlink" title="Hexo的特性介绍"></a>Hexo的特性介绍</h3><blockquote>
 <p>hexo 有两个部分。一个是源文件(Source Repo)，一个是静态网站(Content Repo)。静态网站是需要源文件来生成的。所以 github和gitlab，分别保存这两样东西才行。并同步更新数据。这样异地也可以用</p>
 </blockquote>
-<h2 id="Hexo的版本控制"><a href="#Hexo的版本控制" class="headerlink" title="Hexo的版本控制"></a>Hexo的版本控制</h2><blockquote>
+<h3 id="Hexo的版本控制"><a href="#Hexo的版本控制" class="headerlink" title="Hexo的版本控制"></a>Hexo的版本控制</h3><blockquote>
 <p>github存的是<strong>静态网站</strong>，gitlab存放的是<strong>源文件</strong>。部署就是hexo clean &amp;&amp; hexo g -d。本地测试就是hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</p>
 </blockquote>
 <p>在 myblog/_config.yml 文件中。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:igreedy/igreedy.github.io.git</span><br><span class="line">  branch:master</span><br></pre></td></tr></table></figure></p>
 <p>如果要更新的话，就直接在 git clone的gitlab的源代码文件夹里进行hexo clean &amp;&amp; hexo g -d 进行操作。</p>
-<h2 id="源代码更新时需要忽略的文件"><a href="#源代码更新时需要忽略的文件" class="headerlink" title="源代码更新时需要忽略的文件"></a>源代码更新时需要忽略的文件</h2><p>源代码如果没有其他改动，只是hexo g,  hexo s 运行的话，<br>它也会在/myblog目录下更新以下文件夹：</p>
+<h3 id="源代码更新时需要忽略的文件"><a href="#源代码更新时需要忽略的文件" class="headerlink" title="源代码更新时需要忽略的文件"></a>源代码更新时需要忽略的文件</h3><p>源代码如果没有其他改动，只是hexo g,  hexo s 运行的话，<br>它也会在/myblog目录下更新以下文件夹：</p>
 <blockquote>
 <p>.deploy_git/ </p>
 </blockquote>
 <p>需要在/myblog目录下添加.gitignore 文件。并里面添加上面的代码。<br>然后 执行下面的代码。这样以后部署和开启本地服务器，都不用更新那些文件<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m 'update .gitignore'</span><br></pre></td></tr></table></figure></p>
-<h2 id="添加分类和标签页面"><a href="#添加分类和标签页面" class="headerlink" title="添加分类和标签页面"></a>添加分类和标签页面</h2><p>默认情况下，你下载的主题是没有分类和标签页面，需要自己创建。但是里面显示内容，如果还要自己编写就很麻烦。可以用以下方式处理。先跳转到myblog目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">"tags"</span></span><br><span class="line">hexo new page <span class="string">"categories"</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="添加分类和标签页面"><a href="#添加分类和标签页面" class="headerlink" title="添加分类和标签页面"></a>添加分类和标签页面</h3><p>默认情况下，你下载的主题是没有分类和标签页面，需要自己创建。但是里面显示内容，如果还要自己编写就很麻烦。可以用以下方式处理。先跳转到myblog目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">"tags"</span></span><br><span class="line">hexo new page <span class="string">"categories"</span></span><br></pre></td></tr></table></figure></p>
 <p>然后编辑 source/tags/index.md<br><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: tags</span><br><span class="line">date: 2018-06-15 17:14:50</span><br><span class="line">type: "tags"</span><br><span class="line">layout: "tags"</span><br></pre></td></tr></table></figure></p>
 <p>同理编辑 source/categories/index.md<br><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: categories</span><br><span class="line">date: 2018-06-15 17:17:41</span><br><span class="line">type: "categories"</span><br><span class="line">layout: "categories"</span><br></pre></td></tr></table></figure></p>
 <p>这样 分类和标签 的页面就ok了</p>
+<h3 id="hexo添加图片"><a href="#hexo添加图片" class="headerlink" title="hexo添加图片"></a>hexo添加图片</h3><blockquote>
+<p>创建myblog/public/images文件夹，然后在这个目录上添加文件，在执行 hexo clean &amp;&amp; hexo g &amp;&amp; hexo d。这样你的图片就上传上去了。假设文件名为27691971.png。那么网址为<a href="https://raw.githubusercontent.com/igreedy/igreedy.github.io/master/images/27691971.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/igreedy/igreedy.github.io/master/images/27691971.png</a><br>然后hexo就可以用下面代码来引用这个图片了。</p>
+</blockquote>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!<span class="selector-attr">[]</span>(网址)</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -239,19 +243,10 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2018/06/19/fabric实用脚本/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          fabric简单实用脚本
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/06/17/wiz使用指南/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/06/20/maven镜像设置/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">wiz使用指南</div>
+      <div class="article-nav-title">maven镜像设置</div>
     </a>
   
 </nav>
@@ -265,7 +260,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo的特性介绍"><span class="nav-number">1.</span> <span class="nav-text">Hexo的特性介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo的版本控制"><span class="nav-number">2.</span> <span class="nav-text">Hexo的版本控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源代码更新时需要忽略的文件"><span class="nav-number">3.</span> <span class="nav-text">源代码更新时需要忽略的文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加分类和标签页面"><span class="nav-number">4.</span> <span class="nav-text">添加分类和标签页面</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo的特性介绍"><span class="nav-number">1.</span> <span class="nav-text">Hexo的特性介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo的版本控制"><span class="nav-number">2.</span> <span class="nav-text">Hexo的版本控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#源代码更新时需要忽略的文件"><span class="nav-number">3.</span> <span class="nav-text">源代码更新时需要忽略的文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加分类和标签页面"><span class="nav-number">4.</span> <span class="nav-text">添加分类和标签页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo添加图片"><span class="nav-number">5.</span> <span class="nav-text">hexo添加图片</span></a></li></ol>
     
     </div>
   </aside>

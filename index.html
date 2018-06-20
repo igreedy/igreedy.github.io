@@ -257,6 +257,110 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-myblog博客管理"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/06/20/myblog博客管理/">myblog博客管理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2018/06/20/myblog博客管理/" class="article-date">
+	  <time datetime="2018-06-20T07:19:50.676Z" itemprop="datePublished">2018-06-20</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/myblog/">myblog</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Hexo的特性介绍
+hexo 有两个部分。一个是源文件(Source Repo)，一个是静态网站(Content Repo)。静态网站是需要源文件来生成的。所以 github和gitlab，分别保存这两样东西才行。并同步更新数据。这样异地也可以用
+
+Hexo的版本控制
+github存的是静态网站，gitlab存放的是源文件。部署就是hexo clean &amp;&amp; hexo g -d。本地测试就是hexo clean &amp;&amp; hexo g &amp;&amp; he...
+        </p>
+        <p class="article-more-link">
+          <a href="/2018/06/20/myblog博客管理/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-maven镜像设置"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/06/20/maven镜像设置/">maven镜像设置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2018/06/20/maven镜像设置/" class="article-date">
+	  <time datetime="2018-06-20T07:18:00.436Z" itemprop="datePublished">2018-06-20</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/java/">java</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          创建之后发现没有显示maven dependecies 和 jre system library
+右键项目》》maven 》》enable workspace resoultion 来恢复
+
+creating maven-archetype-quickstart 这个下载过程很慢很慢
+这个需要设置下maven 镜像，默认的国内下载官方仓库的jar，速度不敢恭维，需要改用阿里云maven国内镜像，修改完以后速度可以飞起。修改方法：在~/.m2目录下的settings.xml文件中，（如果该文...
+        </p>
+        <p class="article-more-link">
+          <a href="/2018/06/20/maven镜像设置/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-根据IP返回所在地理位置"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -296,58 +400,6 @@ ip_test.py就是用了17monipdb.dat，来做到离线不联网，可以查询多
         </p>
         <p class="article-more-link">
           <a href="/2018/06/20/根据IP返回所在地理位置/#more">阅读全文</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-maven镜像设置"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2018/06/20/maven镜像设置/">maven镜像设置</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2018/06/20/maven镜像设置/" class="article-date">
-	  <time datetime="2018-06-19T16:00:26.269Z" itemprop="datePublished">2018-06-20</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/java/">java</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          创建之后发现没有显示maven dependecies 和 jre system library
-右键项目》》maven 》》enable workspace resoultion 来恢复
-
-creating maven-archetype-quickstart 这个下载过程很慢很慢
-这个需要设置下maven 镜像，默认的国内下载官方仓库的jar，速度不敢恭维，需要改用阿里云maven国内镜像，修改完以后速度可以飞起。修改方法：在~/.m2目录下的settings.xml文件中，（如果该文...
-        </p>
-        <p class="article-more-link">
-          <a href="/2018/06/20/maven镜像设置/#more">阅读全文</a>
         </p>
       
     </div>
@@ -452,58 +504,6 @@ ssh_...
         </p>
         <p class="article-more-link">
           <a href="/2018/06/19/fabric实用脚本/#more">阅读全文</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-myblog博客管理"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2018/06/17/myblog博客管理/">myblog博客管理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2018/06/17/myblog博客管理/" class="article-date">
-	  <time datetime="2018-06-17T08:55:30.165Z" itemprop="datePublished">2018-06-17</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/myblog/">myblog</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Hexo的特性介绍
-hexo 有两个部分。一个是源文件(Source Repo)，一个是静态网站(Content Repo)。静态网站是需要源文件来生成的。所以 github和gitlab，分别保存这两样东西才行。并同步更新数据。这样异地也可以用
-
-Hexo的版本控制
-github存的是静态网站，gitlab存放的是源文件。部署就是hexo clean &amp;&amp; hexo g -d。本地测试就是hexo clean &amp;&amp; hexo g &amp;&amp; he...
-        </p>
-        <p class="article-more-link">
-          <a href="/2018/06/17/myblog博客管理/#more">阅读全文</a>
         </p>
       
     </div>
