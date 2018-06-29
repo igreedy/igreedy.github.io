@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/igreedy/igreedy.github.io/master/images/go/1.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/igreedy/igreedy.github.io/master/images/go/2.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/igreedy/igreedy.github.io/master/images/go/3.png">
-<meta property="og:updated_time" content="2018-06-29T12:35:26.284Z">
+<meta property="og:updated_time" content="2018-06-29T12:53:23.341Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建ngrok远程桌面的环境">
 <meta name="twitter:description" content="[TOC] 场景使用 在家里用笔记本laptop可以远程访问公司的内部网的工作电脑computer。其效果就是服务器server开启ngrok服务端，公司工作电脑computer开启ngrok.bat脚本客户端，然后家里笔记本laptop用mstsc远程桌面。输入my.domain.com:50123（这个域名需要自己购买）。然后输入工作电脑computer的用户和密码。这样远程登录成功。这样即使">
@@ -213,7 +213,7 @@
 <p>远程桌面环境搭建需要公司服务器server提供两个端口。这个需要在 <strong>/etc/sysconfig/iptables</strong> 里配置。<br>例如一个是远程桌面需要访问的端口，这里我用的是50123(这个自己定)，另外一个是工作电脑computer的<br>ngrok.bat脚本客户端与公司服务器server交互的端口4443(这个是默认的)。</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sysconfig/iptables</span><br><span class="line">// 添加<span class="string">''</span><span class="string">' '</span><span class="string">''</span>里面的内容</span><br><span class="line"><span class="string">''</span><span class="string">'</span></span><br><span class="line"><span class="string">-A INPUT -m state --state NEW -m tcp -p tcp --dport 50123 -j ACCEPT</span></span><br><span class="line"><span class="string">-A INPUT -m state --state NEW -m tcp -p tcp --dport 4443 -j ACCEPT</span></span><br><span class="line"><span class="string">'</span><span class="string">''</span></span><br><span class="line">/etc/init.d/iptables reload</span><br><span class="line">/etc/init.d/iptables restart</span><br><span class="line">// 可用下面的命令来查看开放的端口</span><br><span class="line">iptables -nL</span><br></pre></td></tr></table></figure>
-<h4 id="服务器server上安装ngrok"><a href="#服务器server上安装ngrok" class="headerlink" title="服务器server上安装ngrok"></a>服务器server上安装ngrok</h4><h6 id="下载ngrok安装包"><a href="#下载ngrok安装包" class="headerlink" title="下载ngrok安装包"></a>下载ngrok安装包</h6><p>完整的ngrok下载包](<a href="https://github.com/igreedy/ngrok/raw/master/ngrok.tar.gz" target="_blank" rel="noopener">https://github.com/igreedy/ngrok/raw/master/ngrok.tar.gz</a>)</p>
+<h4 id="服务器server上安装ngrok"><a href="#服务器server上安装ngrok" class="headerlink" title="服务器server上安装ngrok"></a>服务器server上安装ngrok</h4><h6 id="下载ngrok安装包"><a href="#下载ngrok安装包" class="headerlink" title="下载ngrok安装包"></a>下载ngrok安装包</h6><p><a href="https://github.com/igreedy/ngrok/raw/master/ngrok.tar.gz" target="_blank" rel="noopener">完整的ngrok下载包</a></p>
 <blockquote>
 <p>如果下载官方的安装包，在之后执行make release-server 可能会报错。<br>因为不能翻墙什么缘故。不能在ngrok/src目录下下载github.com 和gopkg.in 里面的数据。<br>所以我把下好的数据添加到src目录下。这样执行 make release-server。<br>就不会因为网络缘故而报错。<a href="https://github.com/igreedy/ngrok/raw/master/ngrok.tar.gz" target="_blank" rel="noopener">下载</a><br>也可以用下面方式来安装。</p>
 </blockquote>
